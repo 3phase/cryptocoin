@@ -1,18 +1,29 @@
 <div class="row-layout row">
-  <button igxButton="raised" [disabled]="false" class="button">
+  <button igxButton="raised" [disabled]="false" class="button" (click)="exportToExcel()">
     <igx-icon>grid_on</igx-icon>
     <span>Export to Excel</span>
   </button>
 </div>
 <div class="row-layout_1 row">
-  <igx-grid [data]="cryptocurrenciesTable1" [allowFiltering]="true" filterMode="excelStyleFilter" [autoGenerate]="false" displayDensity="cosy" primaryKey="Rank" class="grid">
+  <igx-grid #grid [data]="cryptocurrenciesTable1" [allowFiltering]="true" filterMode="excelStyleFilter" [autoGenerate]="false" displayDensity="cosy" primaryKey="Rank" class="grid">
     <igx-column field="Rank" header="Rank" title="Rank" dataType="number" [sortable]="true"></igx-column>
-    <igx-column field="Symbol" header="Symbol" title="Symbol" dataType="string" [sortable]="true"></igx-column>
-    <igx-column field="Name" header="Name" title="Name" dataType="string" [sortable]="true"></igx-column>
-    <igx-column field="CurrentPrice" header="CurrentPrice" title="CurrentPrice" dataType="number" [sortable]="true"></igx-column>
-    <igx-column field="MarketCap" header="MarketCap" title="MarketCap" dataType="number" [sortable]="true"></igx-column>
-    <igx-column field="PercentageChange24h" header="PercentageChange24h" title="PercentageChange24h" dataType="number" [sortable]="true"></igx-column>
-    <igx-column field="PercentageChange7d" header="PercentageChange7d" title="PercentageChange7d" dataType="number" [sortable]="true"></igx-column>
-    <igx-column field="URL" header="URL" title="URL" dataType="string" [sortable]="true"></igx-column>
+    <igx-column field="Symbol" header="Cryptocurrency" title="Cryptocurrency" dataType="string" [sortable]="true">
+      <ng-template igxCell let-cell="cell" let-item>
+        <img [src]="cell.row.rowData.URL" style="float: left; height: 40px; margin-right: 10px;">
+        {{ cell.row.rowData.Name }} ({{ item | uppercase }})
+      </ng-template>
+    </igx-column>
+    <igx-column field="CurrentPrice" header="CurrentPrice" title="CurrentPrice" dataType="currency" [sortable]="true"></igx-column>
+    <igx-column field="MarketCap" header="MarketCap" title="MarketCap" dataType="currency" [sortable]="true"></igx-column>
+    <igx-column field="PercentageChange24h" header="PercentageChange24h" title="PercentageChange24h" dataType="number" [sortable]="true">
+      <ng-template igxCell let-item>
+        <span [ngClass]="{'positive': item > 0, 'negative': item <= 0}">{{ item | percent:'.2-3'}}</span>
+      </ng-template>
+    </igx-column>
+    <igx-column field="PercentageChange7d" header="PercentageChange7d" title="PercentageChange7d" dataType="number" [sortable]="true">
+      <ng-template igxCell let-item>
+        <span [ngClass]="{'positive': item > 0, 'negative': item <= 0}">{{ item | percent:'.2-3'}}</span>
+      </ng-template>
+    </igx-column>
   </igx-grid>
 </div>

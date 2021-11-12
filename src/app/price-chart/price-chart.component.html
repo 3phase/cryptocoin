@@ -1,6 +1,9 @@
 <div class="column-layout column">
   <div class="row-layout row">
-    <igx-combo [data]="northwindCategories" [autoFocusSearch]="true" [filterable]="true" [showSearchCaseIcon]="false" valueKey="categoryID" displayKey="categoryID" groupKey type="border" [disabled]="false" value class="combo"></igx-combo>
+    <igx-combo #combo [autoFocusSearch]="true" [filterable]="true" [showSearchCaseIcon]="false" valueKey="Symbol" displayKey="Name" groupKey type="border" [disabled]="false" value class="combo"></igx-combo>
   </div>
-  <div class="chart row"></div>
+  <div class="chart row">
+    <igx-financial-chart #chart [dataSource]="data" height="600px" width="100%">
+    </igx-financial-chart>
+  </div>
 </div>

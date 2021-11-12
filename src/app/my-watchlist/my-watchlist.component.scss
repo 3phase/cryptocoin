@@ -53,7 +53,6 @@
   min-width: 50px;
 }
 .title {
-  color: var(--igx-error-500);
   height: max-content;
   min-width: min-content;
   white-space: pre-wrap;
@@ -80,4 +79,10 @@
 .column {
   display: flex;
   flex-direction: column;
+}
+.positive {
+  color: var(--igx-success-500);
+}
+.negative {
+  color: var(--igx-error-500);
 }

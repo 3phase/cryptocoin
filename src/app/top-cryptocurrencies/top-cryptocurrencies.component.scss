@@ -34,3 +34,9 @@
 .row {
   display: flex;
 }
+.positive {
+  color: var(--igx-success-500);
+}
+.negative {
+  color: var(--igx-error-500);
+}
