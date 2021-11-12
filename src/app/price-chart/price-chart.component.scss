@@ -1,0 +1,42 @@
+:host {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.column-layout {
+  padding: 30px;
+  flex-grow: 1;
+  flex-basis: 0;
+  align-items: stretch;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-layout {
+  margin: 0 0 20px;
+  align-items: stretch;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.chart {
+  flex-grow: 1;
+  flex-basis: 0;
+  align-items: stretch;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.combo {
+  height: max-content;
+  min-width: min-content;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+.row {
+  display: flex;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}

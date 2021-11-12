@@ -1,0 +1,36 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.row-layout {
+  justify-content: flex-end;
+  padding: 30px;
+  align-items: stretch;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.row-layout_1 {
+  flex-grow: 1;
+  flex-basis: 0;
+  align-items: stretch;
+  position: relative;
+  min-width: 50px;
+  min-height: 50px;
+}
+.button {
+  height: max-content;
+  min-width: min-content;
+  flex-shrink: 0;
+}
+.grid {
+  min-width: 50px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.row {
+  display: flex;
+}

@@ -1,0 +1,83 @@
+:host {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.row-layout {
+  flex-wrap: wrap;
+  padding: 30px;
+  flex-grow: 1;
+  flex-basis: 0;
+  position: relative;
+  align-items: stretch;
+  min-height: 50px;
+  min-width: 50px;
+}
+.card {
+  min-width: 320px;
+  margin: 10px;
+  width: 320px;
+  height: max-content;
+  flex-shrink: 0;
+}
+.actions {
+  min-height: 40px;
+  min-width: 50px;
+}
+.row-layout_1 {
+  margin: 0 0 20px;
+  position: relative;
+  align-items: stretch;
+  min-height: 50px;
+  min-width: 50px;
+}
+.column-layout {
+  width: 70%;
+  align-items: stretch;
+  min-height: 50px;
+  min-width: 50px;
+}
+.column-layout_1 {
+  width: 30%;
+  align-items: stretch;
+  min-height: 50px;
+  min-width: 50px;
+}
+.row-layout_2 {
+  align-items: stretch;
+  min-height: 50px;
+  min-width: 50px;
+}
+.content {
+  min-height: 50px;
+  min-width: 50px;
+}
+.title {
+  color: var(--igx-error-500);
+  height: max-content;
+  min-width: min-content;
+  white-space: pre-wrap;
+}
+.title_1 {
+  color: var(--igx-grays-900);
+  height: max-content;
+  min-width: min-content;
+  white-space: pre-wrap;
+}
+.text {
+  margin: 0 0 5px;
+  height: max-content;
+  min-width: min-content;
+  white-space: pre-wrap;
+}
+.button {
+  height: max-content;
+  min-width: min-content;
+}
+.row {
+  display: flex;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}

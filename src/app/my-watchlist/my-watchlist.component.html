@@ -1,0 +1,40 @@
+<div class="row-layout row">
+  <igx-card type="outlined" *ngFor="let item of cryptocurrenciesTable1" class="card">
+    <igx-card-header>
+      <h3 igxCardHeaderTitle>{{ item.Name }}</h3>
+      <h5 igxCardHeaderSubtitle>{{ item.Symbol }}</h5>
+      <igx-avatar [src]="item.URL" [roundShape]="true" size="medium"></igx-avatar>
+    </igx-card-header>
+    <igx-card-content class="content">
+      <div class="row-layout_1 row">
+        <div class="column-layout column">
+          <p class="igx-typography__overline text">Price</p>
+          <p class="igx-typography__subtitle-2 title_1">{{ item.CurrentPrice }}</p>
+        </div>
+        <div class="column-layout_1 column">
+          <p class="igx-typography__overline text">24h</p>
+          <p class="igx-typography__subtitle-2 title">{{ item.PercentageChange24h }}</p>
+        </div>
+      </div>
+      <div class="row-layout_2 row">
+        <div class="column-layout column">
+          <p class="igx-typography__overline text">Market cap</p>
+          <p class="igx-typography__subtitle-2 title_1">{{ item.MarketCap }}</p>
+        </div>
+        <div class="column-layout_1 column">
+          <p class="igx-typography__overline text">Rank</p>
+          <p class="igx-typography__subtitle-2 title_1">{{ item.Rank }}</p>
+        </div>
+      </div>
+    </igx-card-content>
+    <igx-card-actions class="actions">
+      <button igxButton="flat" [disabled]="false" routerLink="/price-chart" class="button">
+        <igx-icon>show_chart</igx-icon>
+        <span>Price Chart</span>
+      </button>
+      <button igxButton="icon" type="icon" [disabled]="false">
+        <igx-icon>delete</igx-icon>
+      </button>
+    </igx-card-actions>
+  </igx-card>
+</div>

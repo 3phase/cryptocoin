@@ -1,0 +1,60 @@
+<igx-navbar class="navigation-bar">
+  <button igxButton="icon" igxButtonColor="var(--igx-surface-500)" type="icon" [disabled]="false" igxNavbarAction [igxToggleAction]="navigationDrawer">
+    <igx-icon>menu</igx-icon>
+  </button>
+  <div igxNavbarTitle>CryptoCoin</div>
+  <button igxButton="icon" igxButtonColor="var(--igx-surface-500)" igxButtonBackground="transparent" type="icon" [disabled]="false" [igxToggleAction]="loginDialog">
+    <igx-icon>person</igx-icon>
+  </button>
+</igx-navbar>
+<div class="row-layout row">
+  <igx-nav-drawer width="320px" [pin]="true" [pinThreshold]="1024" position="left" [isOpen]="true" #navigationDrawer class="navigation-drawer">
+    <ng-template igxDrawer>
+      <span [isHeader]="false" igxDrawerItem routerLink="/top-cryptocurrencies">
+        <igx-icon font="material" [active]="true">dashboard</igx-icon>
+        <span class="navigation-drawer_1">Top Cryptocurrencies</span>
+      </span>
+      <span [isHeader]="false" igxDrawerItem routerLink="/price-chart">
+        <igx-icon font="material" [active]="true">show_chart</igx-icon>
+        <span class="navigation-drawer_1">Price Chart</span>
+      </span>
+      <span [isHeader]="false" igxDrawerItem routerLink="/my-watchlist">
+        <igx-icon font="material" [active]="true">star</igx-icon>
+        <span class="navigation-drawer_1">My Watchlist</span>
+      </span>
+    </ng-template>
+  </igx-nav-drawer>
+  <div class="views-container">
+    <router-outlet></router-outlet>
+  </div>
+  <igx-dialog [closeOnOutsideSelect]="true" [closeOnEscape]="true" #loginDialog class="login-dialog">
+    <div>
+      <div class="column-layout_1 column">
+        <div class="column-layout column">
+          <igx-avatar src="https://dl.dropboxusercontent.com/s/w3nyzkng2t6ywle/CryptoApp_Logo.svg" [roundShape]="true" size="medium" class="avatar"></igx-avatar>
+          <h5 class="title">Login to CryptoCoin</h5>
+        </div>
+        <button igxButton="raised" [disabled]="false" class="user-input">
+          <igx-icon>donut_small</igx-icon>
+          <span>Login with Google</span>
+        </button>
+        <p class="igx-typography__overline text">OR</p>
+        <igx-input-group type="border" class="user-input">
+          <label igxLabel for="inputField">Email address</label>
+          <input type="email" name="inputField" [required]="false" [disabled]="false" igxInput />
+        </igx-input-group>
+        <igx-input-group type="border" class="user-input">
+          <label igxLabel for="inputField">Password</label>
+          <input type="password" name="inputField" [required]="false" [disabled]="false" igxInput />
+        </igx-input-group>
+        <a href target="_blank" class="link">Forgot your password?</a>
+        <button igxButton="raised" [disabled]="false" class="user-input">
+          <span>Login</span>
+        </button>
+        <button igxButton="outlined" [disabled]="false" class="user-input">
+          <span>Create new account</span>
+        </button>
+      </div>
+    </div>
+  </igx-dialog>
+</div>
